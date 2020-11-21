@@ -1,0 +1,7 @@
+name: RezxisPluginChecker
+version: 1.0
+main: jp.iku55.rpc.Main
+commands:
+    pllist:
+        description: Show's plugin list
+        usage: /pllist
