@@ -21,6 +21,7 @@ public class Main extends JavaPlugin {
 	private static List<String> differentPlnames = new ArrayList<String>();
 	private static List<Plugin> notavailablePlugins = new ArrayList<Plugin>();
 	private static List<String> notavailablePlnames = new ArrayList<String>();
+	private static LinkedHashMap<String, PluginVersions> plversions = new LinkedHashMap<>();
 	
 	@SuppressWarnings("unchecked")
 	@Override
@@ -64,7 +65,7 @@ public class Main extends JavaPlugin {
         for (Plugin plugin : plugins) {
 			if (PluginVersionsList.get().contains(plugin.getName())) {
 				Boolean isMatch = false;
-				ArrayList<String> versions = new ArrayList<String>();
+				List<String> versions = new ArrayList<String>();
 				
 				for (Object obj : PluginVersionsList.get().getList(plugin.getName()+"")) {
 					if (obj instanceof LinkedHashMap) {
@@ -75,6 +76,8 @@ public class Main extends JavaPlugin {
 						}
 					}
 				}
+				
+				plversions.put(plugin.getName(), new PluginVersions(plugin.getName(), versions));
 				if (isMatch) {
 					matchedPlugins.add(plugin);
 					matchedPlnames.add(plugin.getName());
@@ -133,5 +136,9 @@ public class Main extends JavaPlugin {
 	
 	public static List<String> getNotavailableplnames() {
 		return notavailablePlnames;
+	}
+	
+	public static LinkedHashMap<String, PluginVersions> getPlversions() {
+		return plversions;
 	}
 }
