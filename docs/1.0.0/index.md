@@ -1,7 +1,7 @@
 ---
 layout: default
 title: RezxisPluginChecker APIドキュメント
-description: 
+description: ドキュメントバージョン v1.0.0
 ---
 # RezxisPluginChecker v1.0.0 APIドキュメント
 ## public static List\<Plugin> getMatchedplugins()
