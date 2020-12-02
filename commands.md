@@ -18,4 +18,4 @@ RezxisPluginChecker
 ```
 
 
-[back](./)
+[ホームに戻る](https://iku55.github.io/RezxisPluginChecker/)
