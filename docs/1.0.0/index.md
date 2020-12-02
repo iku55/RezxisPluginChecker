@@ -1,7 +1,7 @@
 ---
 layout: default
 title: RezxisPluginChecker APIドキュメント
-description: ドキュメントバージョン v1.0.0
+description: ドキュメントバージョン v1.0.1
 ---
 # RezxisPluginChecker v1.0.0 APIドキュメント
 ## public static List\<Plugin> getMatchedplugins()
@@ -24,4 +24,4 @@ Rezxisで使用できないプラグインの名前(String型)のListを返し�
 ソースコード: [jp.iku55.rpc.Main:134](https://github.com/iku55/RezxisPluginChecker/blob/922d5fa7332fc29c9f5bb9c00c3941d81743acf5/src/main/jp/iku55/rpc/Main.java#L134)
 ## public static List\<String> getYAMLVersion()
 Rezxisプラグインバージョンリストのバージョンを取得した結果を1行ずつ返します。  
-ソースコード: [jp.iku55.rpc.config.GetVer](https://github.com/iku55/RezxisPluginChecker/blob/922d5fa7332fc29c9f5bb9c00c3941d81743acf5/src/main/jp/iku55/rpc/config/GetVer.java#L12)
+ソースコード: [jp.iku55.rpc.config.GetVer:12](https://github.com/iku55/RezxisPluginChecker/blob/922d5fa7332fc29c9f5bb9c00c3941d81743acf5/src/main/jp/iku55/rpc/config/GetVer.java#L12)
