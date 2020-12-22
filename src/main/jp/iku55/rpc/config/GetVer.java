@@ -8,6 +8,8 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
+import jp.iku55.rpc.util.LoggerUtils;
+
 public class GetVer {
 	public static List<String> getYAMLVersion() {
 		List<String> text = new ArrayList<String>();
@@ -24,10 +26,16 @@ public class GetVer {
             in.close();
         }
         catch (MalformedURLException e) {
-            System.out.println("Malformed URL: " + e.getMessage());
+        	LoggerUtils.errstart();
+        	LoggerUtils.errhead(e.getMessage(), "ERR_GET_CONFIG_VERSION_MALFORMEDURLEXCEPTION");
+            e.printStackTrace();
+            LoggerUtils.errend();
         }
         catch (IOException e) {
-            System.out.println("I/O Error: " + e.getMessage());
+        	LoggerUtils.errstart();
+        	LoggerUtils.errhead(e.getMessage(), "ERR_GET_CONFIG_VERSION_IOEXCEPTION");
+            e.printStackTrace();
+            LoggerUtils.errend();
         }
 		
 		return text;
