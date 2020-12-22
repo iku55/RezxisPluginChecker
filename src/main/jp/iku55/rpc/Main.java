@@ -16,11 +16,8 @@ import net.md_5.bungee.api.ChatColor;
 
 public class Main extends JavaPlugin {
 	private static List<Plugin> matchedPlugins = new ArrayList<Plugin>();
-	private static List<String> matchedPlnames = new ArrayList<String>();
 	private static List<Plugin> differentPlugins = new ArrayList<Plugin>();
-	private static List<String> differentPlnames = new ArrayList<String>();
 	private static List<Plugin> notavailablePlugins = new ArrayList<Plugin>();
-	private static List<String> notavailablePlnames = new ArrayList<String>();
 	private static LinkedHashMap<String, PluginVersions> plversions = new LinkedHashMap<>();
 	
 	@SuppressWarnings("unchecked")
@@ -80,17 +77,14 @@ public class Main extends JavaPlugin {
 				plversions.put(plugin.getName(), new PluginVersions(plugin.getName(), versions));
 				if (isMatch) {
 					matchedPlugins.add(plugin);
-					matchedPlnames.add(plugin.getName());
 					info(ChatColor.GREEN + "\""+plugin.getName()+"\"のバージョンはRezxisのバージョンと一致しています! ");
 				} else {
 					differentPlugins.add(plugin);
-					differentPlnames.add(plugin.getName());
 					info(ChatColor.YELLOW + "\""+plugin.getName()+"\"のバージョンはRezxisのバージョンと違います。");
 					info(ChatColor.YELLOW + "Rezxisで使用されている\""+plugin.getName()+"\"のバージョンは"+String.join(",", versions)+"です。");
 				}
 			} else {
 				notavailablePlugins.add(plugin);
-				notavailablePlnames.add(plugin.getName());
 				info(ChatColor.RED+"\""+plugin.getName()+"\"はRezxisで使用できません。");
 			}
 		}
@@ -114,30 +108,42 @@ public class Main extends JavaPlugin {
 		getServer().getConsoleSender().sendMessage("[RezxisPluginChecker] "+text);
 	}
 	
+	/**
+	 * Rezxisのバージョンと一致しているプラグイン(Plugin型)のListを返します。
+	 * @return java.util.List<org.bukkit.plugin.Plugin>
+	 * @author iku55
+	 * @since 1.0.0
+	 */
 	public static List<Plugin> getMatchedplugins() {
 		return matchedPlugins;
 	}
 	
+	/**
+	 * Rezxisのバージョンと違うプラグイン(Plugin型)のListを返します。
+	 * @return java.util.List<org.bukkit.plugin.Plugin>
+	 * @author iku55
+	 * @since 1.0.0
+	 */
 	public static List<Plugin> getDifferentplugins() {
 		return differentPlugins;
 	}
 	
+	/**
+	 * Rezxisで使用できないプラグイン(Plugin型)のListを返します。
+	 * @return java.util.List<org.bukkit.plugin.Plugin>
+	 * @author iku55
+	 * @since 1.0.0
+	 */
 	public static List<Plugin> getNotavailableplugins() {
 		return notavailablePlugins;
 	}
 	
-	public static List<String> getMatchedplnames() {
-		return matchedPlnames;
-	}
-	
-	public static List<String> getDifferentplnames() {
-		return differentPlnames;
-	}
-	
-	public static List<String> getNotavailableplnames() {
-		return notavailablePlnames;
-	}
-	
+	/**
+	 * versions.ymlの内容をStringとPluginVersionsのLinkedHashMapにしたものを返します。
+	 * @return java.util.LinkedHashMap<java.lang.String, jp.iku55.rpc.PluginVersions>
+	 * @author iku55
+	 * @since 1.1.0
+	 */
 	public static LinkedHashMap<String, PluginVersions> getPlversions() {
 		return plversions;
 	}

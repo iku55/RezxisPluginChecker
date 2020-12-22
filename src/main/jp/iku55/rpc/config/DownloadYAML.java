@@ -14,6 +14,8 @@ import java.net.URL;
 
 import org.bukkit.Bukkit;
 
+import jp.iku55.rpc.util.LoggerUtils;
+
 public class DownloadYAML {
 	public static void downloadVersionsYAML() {
 		try {
@@ -52,16 +54,30 @@ public class DownloadYAML {
 			dataOutStream.close();
 	
 		} catch (FileNotFoundException e) {
-			    e.printStackTrace();
+			LoggerUtils.errstart();
+			LoggerUtils.errhead(e.getMessage(), "ERR_DOWNLOAD_CONFIG_FILE_FILENOTFOUNDEXCEPTION");
+			e.printStackTrace();
+			LoggerUtils.errend();
 		} catch (ProtocolException e) {
-			    e.printStackTrace();
+			LoggerUtils.errstart();
+			LoggerUtils.errhead(e.getMessage(), "ERR_DOWNLOAD_CONFIG_FILE_PROTOCOLEXCEPTION");
+			e.printStackTrace();
+			LoggerUtils.errend();
 		} catch (MalformedURLException e) {
-			    e.printStackTrace();
+			LoggerUtils.errstart();
+			LoggerUtils.errhead(e.getMessage(), "ERR_DOWNLOAD_CONFIG_FILE_MALFORMEDURLEXCEPTION");
+			e.printStackTrace();
+			LoggerUtils.errend();
 		} catch (IOException e) {
-		    	e.printStackTrace();
+			LoggerUtils.errstart();
+			LoggerUtils.errhead(e.getMessage(), "ERR_DOWNLOAD_CONFIG_FILE_IOEXCEPTION");
+		    e.printStackTrace();
+		    LoggerUtils.errend();
 		} catch (Exception e) {
-			    System.out.println(e.getMessage());
-			    e.printStackTrace();
+			LoggerUtils.errstart();
+			LoggerUtils.errhead(e.getMessage(), "ERR_DOWNLOAD_CONFIG_FILE_EXCEPTION");
+			e.printStackTrace();
+			LoggerUtils.errend();
 		}
 	}
 }

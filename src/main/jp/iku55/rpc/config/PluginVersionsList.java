@@ -4,6 +4,8 @@ import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 
+import jp.iku55.rpc.util.LoggerUtils;
+
 import java.io.File;
 import java.io.IOException;
 
@@ -20,6 +22,7 @@ public class PluginVersionsList {
             try{
                 file.createNewFile();
             }catch (IOException e){
+            	LoggerUtils.errhead(e.getMessage(), "ERR_CONFIG_FILE_CREATE");
                 e.printStackTrace();
             }
         }
@@ -34,8 +37,10 @@ public class PluginVersionsList {
         try{
             customFile.save(file);
         }catch (IOException e){
-            System.out.println("Couldn't save file");
+        	LoggerUtils.errstart();
+        	LoggerUtils.errhead(e.getMessage(), "ERR_CONFIG_FILE_SAVE");
             e.printStackTrace();
+            LoggerUtils.errend();
         }
     }
 
