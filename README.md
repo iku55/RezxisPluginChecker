@@ -1,6 +1,6 @@
 # RezxisPluginChecker
-**重要: [RezxisPluginChecker](https://github.com/iku55/RezxisPluginChecker)および[rez_versions](https://github.com/iku55/rez_versions)は2021年1月31日にサポートを終了します。  
-引き続きプラグイン、プラグインリストはダウンロード、使用可能ですが、githubのリポジトリはアーカイブされます。  
+**重要: [RezxisPluginChecker](https://github.com/iku55/RezxisPluginChecker)および[rez_versions](https://github.com/iku55/rez_versions)は2021年1月31日にサポートを終了しました。  
+このリポジトリはアーカイブされています。
 また、Rezxis Realmsなどがアクティブになった場合、このプラグインの開発が再開されるかもしれません。**  
 サーバーに入っているプラグインがRezxisと同じバージョンかを判別します。
 ## コマンド
